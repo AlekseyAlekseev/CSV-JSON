@@ -24,17 +24,17 @@ public class Main {
         /**
          * Сохраняем данные из CSV-файла в объект
          */
-        List<Employee> list = ParseCsv.parseCSV(columnMapping, fileName);
+        List<Employee> list = ParseCsv.parsingCSV(columnMapping, fileName);
 
         /**
          * Преобразуем объект в строчку формата JSON
          */
-        String json = ToJson.writeToJson(list, listType);
+        String json = ParseJson.listToFormatJson(list, listType);
 
         /**
-         * Сохраняем данные полученные из метода "writeToJson" в data.json
+         * Сохраняем данные полученные из метода "listToFormatJson" в data.json
          */
-        ToJson.writeString(json);
+        ParseJson.writeJson(json);
 
 
 

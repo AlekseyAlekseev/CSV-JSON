@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class ToJson {
+public class ParseJson {
 
     /**
      * Преобразуем объект в строчку формата JSON
@@ -15,7 +15,7 @@ public class ToJson {
      * @param listType тип списка
      * @return
      */
-    public static String writeToJson(List list, Type listType) {
+    public static String listToFormatJson(List list, Type listType) {
 
         GsonBuilder builder = new GsonBuilder();
         Gson gson = builder.create();
@@ -23,10 +23,10 @@ public class ToJson {
     }
 
     /**
-     * Сохраняем данные полученные из метода "writeToJson" в data.json
-     * @param json строка с данными из метода "writeToJson"
+     * Сохраняем данные полученные из метода "listToFormatJson" в data.json
+     * @param json строка с данными из метода "listToFormatJson"
      */
-    public static void writeString(String json) {
+    public static void writeJson(String json) {
         try (FileWriter file = new FileWriter("data.json")) {
             file.write(json);
             file.flush();

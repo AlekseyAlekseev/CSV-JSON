@@ -14,11 +14,11 @@ public class ParseCsv {
 
     /**
      * Метод считывающий данные из указанного CSV-файла и сохраняющий данные в объект по заданной маске
-     * @param columnMapping аска названия колонок и их порядка
+     * @param columnMapping Маска названия колонок и их порядка
      * @param fileName      Имя считываемого CSV-файла
      * @return
      */
-    public static List<Employee> parseCSV(String[] columnMapping, String fileName) {
+    public static List<Employee> parsingCSV(String[] columnMapping, String fileName) {
         List<Employee> staff = new ArrayList<>();
         try (CSVReader reader = new CSVReader(new FileReader(fileName))) {
             ColumnPositionMappingStrategy<Employee> strategy = new ColumnPositionMappingStrategy<>();
